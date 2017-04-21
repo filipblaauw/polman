@@ -6,16 +6,15 @@ block content
 
     p Include this script in your page. Make sure to alter param value "jsonp" to the name of your callback method:
     code
-      | &#60;script src="http://polman.herokuapp.com/api/forecast?url=#{url}&num=#{num}&jsonp=myCallback"&#62;&#60;/script&#62;
+      | &#60;script src="http://yrapi.herokuapp.com/api/forecast?url=#{url}&num=#{num}&jsonp=myCallback"&#62;&#60;/script&#62;
 
     p <a href="/api/forecast?url=#{url}&num=#{num}&jsonp=myCallback" target="_blank">Here</a> is what the JSON data looks like.
 
     hr
 
-    p Please note that weather data is cached for ~10 minutes which means that there is a slight delay compared to yr.no's data. 
+    p Please note that weather data is cached for ~10 minutes which means that there is a slight delay compared to yr.no's data.
 
     p Weather forecast from yr.no, delivered by the Norwegian Meteorological Institute and the NRK.
 
     footer: p
-      | 
-
+      |

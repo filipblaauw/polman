@@ -4,6 +4,7 @@ var express = require('express'),
     path = require('path'),
     xml2js = require('xml2js'),
     moment = require('moment'),
+    lessMiddleware = require('less-middleware'),
     redis,
     Cache,
     YR;
@@ -19,7 +20,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(require('less-middleware')({ src: __dirname + '/public' }));
+  app.use(lessMiddleware(__dirname + '/public'));
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
@@ -131,7 +132,7 @@ YR = {
       res.on('data', function (chunk) {
         body += chunk;
       });
-    
+
       res.on('end', function () {
         that.xmlToJson(body, function(err, json) {
           if(err || json['error']) {
@@ -173,7 +174,7 @@ YR = {
 // Redis cache.
 //
 Cache = {
-  
+
   // Cache TTL/expiry in seconds
   ttl: 60*15,
 
@@ -217,4 +218,3 @@ http.createServer(app).listen(app.get('port'), function(){
   Cache.initialize();
   YR.initialize();
 });
-

@@ -6,7 +6,7 @@ block content
     p Wraps yr.no's API in JSONP format.
 
     p Customize with options below and copy-paste generated script to your website.
-    
+
     p Weather forecast from <a href="http://yr.no">yr.no</a>, delivered by the Norwegian Meteorological Institute and the NRK.
 
     if locals.error
@@ -16,7 +16,7 @@ block content
       p
         label Enter URL to forecast
         input(type="text", name="url", placeholder="Ex: http://www.yr.no/place/Sweden/Stockholm/Stockholm/")
-      
+
       p
         label Number of rows
         input(type="text", name="num", value="10")
@@ -25,27 +25,23 @@ block content
       //p
         label Choose type of forecast
         label.radio
-          input(type="radio", name="type", value="overview", checked="checked") 
+          input(type="radio", name="type", value="overview", checked="checked")
           | Overview
         label.radio
-          input(type="radio", name="type", value="hourly") 
+          input(type="radio", name="type", value="hourly")
           | Hour-by-hour
         label.radio
-          input(type="radio", name="type", value="longTerm") 
+          input(type="radio", name="type", value="longTerm")
           | Long-term
-      
+
       //p
         label Language
         label.radio
-          input(type="radio", name="lang", value="eng", checked="checked") 
+          input(type="radio", name="lang", value="eng", checked="checked")
           | English
         label.radio
-          input(type="radio", name="lang", value="swe") 
+          input(type="radio", name="lang", value="swe")
           | Swedish
 
       p
         input(type="submit", value="JSONP-ify!").btn
-
-    footer: p
-      | 
-
